@@ -6,6 +6,7 @@ import EventDispatcher 		= require("../../../kurst/events/EventDispatcher");
 class RouterController extends EventDispatcher
 {
 
+	// Note : Not used in this project
 	//----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	private routes : Backbone.Router;
