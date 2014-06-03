@@ -1,0 +1,16 @@
+{
+	"name": "Kurst TypeScript - Require JS Test",
+	"description": "A starter project for TypeScript and RequireJS",
+	"version": "0.0.0",
+	"homepage": "",
+	"license": "MIT",
+	"private": true,
+	"dependencies": {
+		"jquery": "2.1.1",
+		"requirejs":"2.1.13",
+		"threejs":"r67",
+		"backbone":"1.1.2",
+		"Backbone.localStorage":"1.1.7",
+		"underscore":"1.6.0"
+	}
+}

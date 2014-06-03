@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!-- The current version of the application -->
+        <meta name="version" content="0.1.0"/>
+
+        <!-- Define charset for HTML5 Doctype -->
+        <meta charset="utf-8" />
+
+        <!-- Add the fav icon -->
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    </head>
+    <body>
+
+        <script type="text/javascript" src="js/bower_components/requirejs/require.js" data-main="js/BackboneTestConfig.js"></script>
+        <script type="text/javascript" src="js/config_basic.js"></script>
+
+
+        <section id="app-container">
+
+	        <!-- Add User -->
+
+	        <section id="new-user">
+		        <label >First name</label>
+		        <input id="firstName-input">
+
+		        <label >Last name</label>
+		        <input id="lastName-input">
+
+		        <label >Age</label>
+		        <input id="age-input">
+
+		        <button id="adduser-button">add user</button>
+	        </section>
+
+	        <!-- User List -->
+
+	        <section id="users">
+	            <ul id="user-list"></ul>
+			</section>
+
+	    </section>
+
+        <!-- TEMPLATES -->
+
+        <script type="text/template" id="item-template">
+	        <div class="view">
+		        <label class="firstName-content"><%- firstName %></label>
+		        <label class="lastName-content"><%- lastName %></label>
+		        <age> - <%- age %></age>
+		        <input class="toggle" type="checkbox" <%= isTester ? 'checked' : '' %>>
+		        <button class="destroy">remove</button>
+	        </div>
+	        <input class="edit-input" value="<%= firstName %>">
+        </script>
+
+    </body>
+</html>
