@@ -1,8 +1,4 @@
-RequireJSTypeScript
-===================
-
-Test / Demo project using TypeScript with Away3D, RequireJS, Bower and Grunt. 
-
+TypeScript demo - sample application using RequireJS and BackboneJS
 
 Getting Started
 ===================
@@ -22,3 +18,7 @@ Getting Started
 4) to compile the project, run:
 
         grunt
+
+5) to run a watcher that will compile your TypeScript as you work use the following command:
+
+        grunt watch
