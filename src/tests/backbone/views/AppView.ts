@@ -11,8 +11,6 @@ class AppView extends Backbone.View<TestData>
 {
 	//----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-	private template			: (data: any) => string;
-	private input 				: any;
 	private mainElement			: HTMLElement;
 	private testDataColleaction : TestDataCollection;
 
@@ -28,13 +26,22 @@ class AppView extends Backbone.View<TestData>
 
 		testDataColleaction.bind('add', ( testData : TestData ) => this.addOne( testData ) );
 		testDataColleaction.bind('reset', ( ) => this.addAll( ) );
+		testDataColleaction.bind('remove', ( ) => this.removeModel( ) );
 		testDataColleaction.bind('all', ( ) => this.render( ) );
 
-		//testDataColleaction.fetch();
+		this.testDataColleaction = testDataColleaction;
+		this.testDataColleaction.fetch();
+
 	}
 
 	//----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+	/**
+	 */
+	private removeModel() : void
+	{
+		this.testDataColleaction.save();
+	}
 	/**
 	 *
 	 * @param testData
@@ -42,9 +49,9 @@ class AppView extends Backbone.View<TestData>
 	private addOne(testData : TestData ) : void
 	{
 		var viewOptions : Backbone.ViewOptions<TestData> 	= new Object();
-			viewOptions.model 								= testData
+		viewOptions.model 								= testData
 
-		var view : TestDataView 							= new TestDataView( viewOptions );
+		var view : TestDataView 							= new TestDataView( this.testDataColleaction , viewOptions );
 
 		$('#user-list').append(view.render().el);
 	}

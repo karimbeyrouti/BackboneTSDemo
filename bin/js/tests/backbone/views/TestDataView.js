@@ -7,11 +7,12 @@ var __extends = this.__extends || function (d, b) {
 define(["require", "exports", "backbone"], function(require, exports, Backbone) {
     var TestDataView = (function (_super) {
         __extends(TestDataView, _super);
-        function TestDataView(options) {
+        function TestDataView(viewcollection, options) {
             var _this = this;
             _super.call(this);
             this.templateInitialised = false;
 
+            this.viewcollection = viewcollection;
             this.tagName = 'li';
             this.events = {
                 "click 		.toggle": 'toggleTester',
@@ -66,6 +67,7 @@ define(["require", "exports", "backbone"], function(require, exports, Backbone) 
 
         TestDataView.prototype.toggleTester = function () {
             this.model.isTester = !this.model.isTester;
+            this.viewcollection.save();
         };
 
         TestDataView.prototype.editFirstName = function () {
@@ -119,6 +121,7 @@ define(["require", "exports", "backbone"], function(require, exports, Backbone) 
             this.input.style.visibility = 'hidden';
 
             if (TestDataView.EDIT_MODE != TestDataView.EDIT_NONE) {
+                this.viewcollection.sync();
                 this.render();
             }
         };

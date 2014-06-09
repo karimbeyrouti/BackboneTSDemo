@@ -16,14 +16,11 @@ class NewUserView extends Backbone.View<TestData>
 	{
 		super( options );
 
-		this.testDataColleaction = testDataColleaction;
-
-		console.log( $(this.$el).find( '#firstName-input' )[0] );
-
-		this.firstNameInput 	= <HTMLInputElement> $(this.$el).find( '#firstName-input' )[0];
-		this.lastNameInput 		= <HTMLInputElement> $(this.$el).find( '#lastName-input' )[0];
-		this.ageInput 			= <HTMLInputElement> $(this.$el).find( '#age-input' )[0];
-		this.addUser 			= <HTMLButtonElement> $(this.$el).find( '#adduser-button' )[0];
+		this.testDataColleaction 	= testDataColleaction;
+		this.firstNameInput 		= <HTMLInputElement> $(this.$el).find( '#firstName-input' )[0];
+		this.lastNameInput 			= <HTMLInputElement> $(this.$el).find( '#lastName-input' )[0];
+		this.ageInput 				= <HTMLInputElement> $(this.$el).find( '#age-input' )[0];
+		this.addUser 				= <HTMLButtonElement> $(this.$el).find( '#adduser-button' )[0];
 
 		this.addUser.addEventListener( 'click' , () => this.addUserHandler() );
 	}
@@ -35,6 +32,8 @@ class NewUserView extends Backbone.View<TestData>
 		this.firstNameInput.value = '';
 		this.lastNameInput.value = '';
 		this.ageInput.value = '';
+
+		this.testDataColleaction.save();
 	}
 }
 

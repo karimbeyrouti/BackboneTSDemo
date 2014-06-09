@@ -1,17 +1,15 @@
 /// <reference path="../../../libs/backbone.d.ts" />
 
-import Backbone 		= require("backbone");
-import TestData 		= require("./TestData");
+import Backbone 		        = require("backbone");
+import TestData 		        = require("./TestData");
+import LocalStorageCollection   = require("../../../kurst/backbone/LocalStorageCollection");
 
-class TestDataCollection extends Backbone.Collection<TestData>
+class TestDataCollection extends LocalStorageCollection<TestData>
 {
-
-	private localStorage : Backbone.LocalStorage;
 
 	constructor()
 	{
-		super();
-		//this.localStorage = new Backbone.LocalStorage('test-typescript-backbone');
+		super( 'Test-Data-LocalStorage' , TestData );
 	}
 
 }

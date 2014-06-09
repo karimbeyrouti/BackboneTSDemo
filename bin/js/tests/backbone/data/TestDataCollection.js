@@ -4,14 +4,14 @@ var __extends = this.__extends || function (d, b) {
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-define(["require", "exports", "backbone"], function(require, exports, Backbone) {
+define(["require", "exports", "./TestData", "../../../kurst/backbone/LocalStorageCollection"], function(require, exports, TestData, LocalStorageCollection) {
     var TestDataCollection = (function (_super) {
         __extends(TestDataCollection, _super);
         function TestDataCollection() {
-            _super.call(this);
+            _super.call(this, 'Test-Data-LocalStorage', TestData);
         }
         return TestDataCollection;
-    })(Backbone.Collection);
+    })(LocalStorageCollection);
 
     
     return TestDataCollection;

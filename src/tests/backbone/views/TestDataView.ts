@@ -18,6 +18,7 @@ class TestDataView extends Backbone.View<TestData>
 
 	//----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+	private viewcollection      : TestDataCollection;
 	private template			: (data: any) => string;
 	private templateInitialised : boolean = false;
 	private clickDocDelegate	: EventListener;
@@ -32,11 +33,12 @@ class TestDataView extends Backbone.View<TestData>
 
 	//----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-	constructor(options?: Backbone.ViewOptions<TestData>)
+	constructor( viewcollection : TestDataCollection, options?: Backbone.ViewOptions<TestData>)
 	{
 
 		super();
 
+		this.viewcollection = viewcollection;
 		this.tagName 	= 'li';
 		this.events 	= <any>
 		{
@@ -111,6 +113,7 @@ class TestDataView extends Backbone.View<TestData>
 	private toggleTester() : void
 	{
 		this.model.isTester = !this.model.isTester;
+		this.viewcollection.save();
 	}
 	/**
 	 *
@@ -180,10 +183,9 @@ class TestDataView extends Backbone.View<TestData>
 
 		if ( TestDataView.EDIT_MODE != TestDataView.EDIT_NONE)
 		{
+			this.viewcollection.sync();
 			this.render();
 		}
-
-		//this.model.save();
 	}
 	/**
 	 * @param e

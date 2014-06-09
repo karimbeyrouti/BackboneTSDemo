@@ -20,15 +20,25 @@ define(["require", "exports", "backbone", './TestDataView'], function(require, e
             testDataColleaction.bind('reset', function () {
                 return _this.addAll();
             });
+            testDataColleaction.bind('remove', function () {
+                return _this.removeModel();
+            });
             testDataColleaction.bind('all', function () {
                 return _this.render();
             });
+
+            this.testDataColleaction = testDataColleaction;
+            this.testDataColleaction.fetch();
         }
+        AppView.prototype.removeModel = function () {
+            this.testDataColleaction.save();
+        };
+
         AppView.prototype.addOne = function (testData) {
             var viewOptions = new Object();
             viewOptions.model = testData;
 
-            var view = new TestDataView(viewOptions);
+            var view = new TestDataView(this.testDataColleaction, viewOptions);
 
             $('#user-list').append(view.render().el);
         };

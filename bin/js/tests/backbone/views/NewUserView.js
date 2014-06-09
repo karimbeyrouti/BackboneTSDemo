@@ -12,9 +12,6 @@ define(["require", "exports", "backbone", '../data/TestData'], function(require,
             _super.call(this, options);
 
             this.testDataColleaction = testDataColleaction;
-
-            console.log($(this.$el).find('#firstName-input')[0]);
-
             this.firstNameInput = $(this.$el).find('#firstName-input')[0];
             this.lastNameInput = $(this.$el).find('#lastName-input')[0];
             this.ageInput = $(this.$el).find('#age-input')[0];
@@ -30,6 +27,8 @@ define(["require", "exports", "backbone", '../data/TestData'], function(require,
             this.firstNameInput.value = '';
             this.lastNameInput.value = '';
             this.ageInput.value = '';
+
+            this.testDataColleaction.save();
         };
         return NewUserView;
     })(Backbone.View);
