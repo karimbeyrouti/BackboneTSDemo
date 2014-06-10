@@ -21,6 +21,10 @@ body
     border-radius:5px;
 }
 
+#new-user input
+{
+    width: 130px;
+}
 #users ul
 {
     list-style-type: none;
