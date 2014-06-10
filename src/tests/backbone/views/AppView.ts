@@ -49,7 +49,8 @@ class AppView extends Backbone.View<TestData>
 	private addOne(testData : TestData ) : void
 	{
 		var viewOptions : Backbone.ViewOptions<TestData> 	= new Object();
-		viewOptions.model 								= testData
+			viewOptions.model 								= testData
+			viewOptions.tagName                             = 'li';
 
 		var view : TestDataView 							= new TestDataView( this.testDataColleaction , viewOptions );
 

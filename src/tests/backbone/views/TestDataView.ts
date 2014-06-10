@@ -36,10 +36,9 @@ class TestDataView extends Backbone.View<TestData>
 	constructor( viewcollection : TestDataCollection, options?: Backbone.ViewOptions<TestData>)
 	{
 
-		super();
+		super( options );
 
 		this.viewcollection = viewcollection;
-		this.tagName 	= 'li';
 		this.events 	= <any>
 		{
 			"click 		.toggle"  		 			: 'toggleTester',

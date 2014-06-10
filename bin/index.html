@@ -11,6 +11,7 @@
         <!-- Add the fav icon -->
         <link rel="icon" href="/favicon.ico" type="image/x-icon">
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="css/backbone.css" />
 
     </head>
     <body>
@@ -47,14 +48,14 @@
         <!-- TEMPLATES -->
 
         <script type="text/template" id="item-template">
-	        <div class="view">
-		        <label class="firstName-content"><%- firstName %></label>
-		        <label class="lastName-content"><%- lastName %></label>
-		        <age> - <%- age %></age>
-		        <input class="toggle" type="checkbox" <%= isTester ? 'checked' : '' %>>
-		        <button class="destroy">remove</button>
-	        </div>
-	        <input class="edit-input" value="<%= firstName %>">
+            <div class="user-item-view">
+                <input class="toggle" type="checkbox" <%= isTester ? 'checked' : '' %>>
+                <label class="firstName-content"><%- firstName %></label>
+                <label class="lastName-content"><%- lastName %></label>
+                <label class="age-content"><%- age %></label>
+                <button class="destroy">remove</button>
+            </div>
+            <input class="edit-input" value="<%= firstName %>">
         </script>
 
     </body>

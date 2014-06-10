@@ -9,11 +9,10 @@ define(["require", "exports", "backbone"], function(require, exports, Backbone) 
         __extends(TestDataView, _super);
         function TestDataView(viewcollection, options) {
             var _this = this;
-            _super.call(this);
+            _super.call(this, options);
             this.templateInitialised = false;
 
             this.viewcollection = viewcollection;
-            this.tagName = 'li';
             this.events = {
                 "click 		.toggle": 'toggleTester',
                 "click 		button.destroy": 'clear',

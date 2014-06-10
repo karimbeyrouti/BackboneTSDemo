@@ -37,6 +37,7 @@ define(["require", "exports", "backbone", './TestDataView'], function(require, e
         AppView.prototype.addOne = function (testData) {
             var viewOptions = new Object();
             viewOptions.model = testData;
+            viewOptions.tagName = 'li';
 
             var view = new TestDataView(this.testDataColleaction, viewOptions);
 
