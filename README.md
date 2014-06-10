@@ -1,6 +1,7 @@
 TypeScript demo
 ===================
-Sample TypeScript application using RequireJS and BackboneJS
+Sample TypeScript application using RequireJS and BackboneJS <br>
+Example: http://kurst.co.uk/samples/backbonejs/
  
 
 Getting Started
