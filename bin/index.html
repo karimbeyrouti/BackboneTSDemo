@@ -1,62 +1,62 @@
 <!DOCTYPE html>
 
 <html lang="en">
-    <head>
-        <!-- The current version of the application -->
-        <meta name="version" content="0.1.0"/>
+<head>
+    <!-- The current version of the application -->
+    <meta name="version" content="0.1.0"/>
 
-        <!-- Define charset for HTML5 Doctype -->
-        <meta charset="utf-8" />
+    <!-- Define charset for HTML5 Doctype -->
+    <meta charset="utf-8" />
 
-        <!-- Add the fav icon -->
-        <link rel="icon" href="/favicon.ico" type="image/x-icon">
-        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-        <link rel="stylesheet" href="css/backbone.css" />
+    <!-- Add the fav icon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/backbone.css" />
 
-    </head>
-    <body>
+</head>
+<body>
 
-        <script type="text/javascript" src="js/bower_components/requirejs/require.js" data-main="js/BackboneTestConfig.js"></script>
-        <script type="text/javascript" src="js/config_basic.js"></script>
+<script type="text/javascript" src="js/bower_components/requirejs/require.js" data-main="js/BackboneTestConfig.js"></script>
+<script type="text/javascript" src="js/config_basic.js"></script>
 
 
-        <section id="app-container">
+<div id="app-container">
 
-	        <!-- Add User -->
+    <!-- Add User -->
 
-	        <section id="new-user">
-		        <label >First name</label>
-		        <input id="firstName-input">
+    <div id="new-user">
+        <label >First name</label>
+        <input id="firstName-input">
 
-		        <label >Last name</label>
-		        <input id="lastName-input">
+        <label >Last name</label>
+        <input id="lastName-input">
 
-		        <label >Age</label>
-		        <input id="age-input">
+        <label >Age</label>
+        <input id="age-input">
 
-		        <button id="adduser-button">add user</button>
-	        </section>
+        <button id="adduser-button">add user</button>
+    </div>
 
-	        <!-- User List -->
+    <!-- User List -->
 
-	        <section id="users">
-	            <ul id="user-list"></ul>
-			</section>
+    <div id="users">
+        <ul id="user-list"></ul>
+    </div>
 
-	    </section>
+</div>
 
-        <!-- TEMPLATES -->
+<!-- TEMPLATES -->
 
-        <script type="text/template" id="item-template">
-            <div class="user-item-view">
-                <input class="toggle" type="checkbox" <%= isTester ? 'checked' : '' %>>
-                <label class="firstName-content"><%- firstName %></label>
-                <label class="lastName-content"><%- lastName %></label>
-                <label class="age-content"><%- age %></label>
-                <button class="destroy">remove</button>
-            </div>
-            <input class="edit-input" value="<%= firstName %>">
-        </script>
+<script type="text/template" id="item-template">
+    <div class="user-item-view">
+        <input class="toggle" type="checkbox" <%= isTester ? 'checked' : '' %>>
+        <label class="firstName-content"><%- firstName %></label>
+        <label class="lastName-content"><%- lastName %></label>
+        <label class="age-content"><%- age %></label>
+        <button class="destroy">remove</button>
+    </div>
+    <input class="edit-input" value="<%= firstName %>">
+</script>
 
-    </body>
+</body>
 </html>

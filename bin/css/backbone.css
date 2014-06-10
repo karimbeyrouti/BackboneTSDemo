@@ -1,8 +1,8 @@
-
 body
 {
     font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
     font-size: 10pt;
+    overflow: auto;
 }
 
 #new-user
@@ -14,7 +14,7 @@ body
     border: solid #a7a7a7 1px;
     padding-top: 8px;
     padding-left: 8px;
-    position: fixed;
+    position: relative;
     left: 50%;
     margin-left: -320px;
 }
@@ -22,8 +22,8 @@ body
 #users ul
 {
     list-style-type: none;
-    top: 40px;
-    position: fixed;
+    top: 0px;
+    position: relative;
     width: 640px;
     padding-top: 8px;
     padding-left: 0px;
@@ -38,7 +38,6 @@ body
     height: 40px;
 }
 
-
 #users ul li div
 {
     padding-left: 10px;
@@ -46,10 +45,7 @@ body
     border: solid #a7a7a7 1px;
     box-shadow: 3px 3px 3px #a7a7a7;
     height: 25px;
-
 }
-
-
 
 .toggle
 {
